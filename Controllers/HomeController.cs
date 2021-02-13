@@ -31,7 +31,7 @@ namespace QrCodeGen.Controllers
         }
 
         [HttpGet("qrcode")]
-        public IActionResult GetQrCode([FromQuery]string url)
+        public IActionResult GetQrCode([FromQuery] string url)
         {
             var image = QrCodeManager.GenerateByteArray(url);
             return File(image, "image/jpeg");
